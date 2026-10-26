@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0d12">
+  <meta name="description" content="Check password strength and known data breaches privately.">
+  <title>Password Strength Analyzer with Breach Check</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <main class="dashboard" id="top">
+    <aside class="sidebar">
+      <a class="brand" href="#top"><span class="brand-mark">◈</span><span>Pass<span class="brand-dot">Guard</span></span></a>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-link active" href="#top"><span>⌂</span> Home</a>
+        <a class="nav-link" href="#analyze"><span>◉</span> Analyze Password</a>
+        <a class="nav-link" href="#breach"><span>◈</span> Breach Check</a>
+        <a class="nav-link" href="#recommendations"><span>✧</span> Security Tips</a>
+        <a class="nav-link" href="#about"><span>ⓘ</span> About</a>
+      </nav>
+      <div class="sidebar-bottom"><div class="shield-art"><span>♙</span></div><p>Stay safe online</p><small>Your security matters</small></div>
+    </aside>
+    <section class="workspace">
+      <header class="topbar"><div class="page-title">Password Security <span>/ Dashboard</span></div><div class="account-chip"><span class="status-dot"></span><span><b>Your Security</b><small>Matters</small></span></div></header>
+      <div class="content-grid">
+        <section class="main-column">
+          <div class="welcome"><div class="eyebrow">PASSWORD HEALTH CHECK</div><h1>Stronger passwords.<br><span>Safer accounts.</span></h1><p>Check your password strength and discover ways to improve it.</p></div>
+          <section id="analyze" class="panel analyzer" aria-label="Password strength analyzer">
+            <div class="panel-heading"><span class="panel-icon">◈</span><h2>Password Strength Analysis</h2><span class="private-badge">PRIVATE</span></div>
+            <label class="input-label" for="password">ENTER A PASSWORD</label>
+            <div class="password-input-wrap"><input id="password" type="password" autocomplete="new-password" spellcheck="false" placeholder="Type a sample password"><button id="visibility" class="visibility-btn" type="button" aria-label="Show password">◉</button><button id="check-button" class="check-btn" type="button" disabled>⌕ &nbsp; Check</button></div>
+            <p class="storage-note"><span>▣</span> Not saved. It stays in this page while you analyze it.</p>
+            <div class="analysis-layout"><div class="gauge-column"><div class="gauge-caption">STRENGTH</div><div id="strength-meter" class="strength-meter" aria-label="No password entered"><span></span><span></span><span></span><span></span></div><strong id="strength-name" class="strength-empty">WAITING</strong><button id="reset-button" class="reset-btn" type="button" hidden>↺ Clear</button></div><div id="criteria" class="criteria-grid"></div></div>
+            <div class="bottom-note"><span>▣</span><div><strong>Strong passwords keep you safe.</strong><small>A long, unique password helps protect your accounts from hackers and data breaches.</small></div></div>
+          </section>
+        </section>
+        <aside class="right-column">
+          <section id="breach" class="panel breach-panel"><div class="panel-heading"><span class="panel-icon">▤</span><h2>Breach Check</h2></div><div id="breach-card" class="breach-card breach-idle" aria-live="polite"><div id="breach-icon" class="breach-icon">◇</div><div class="breach-text"><strong id="breach-title">Not checked</strong><span id="breach-body">Check whether this password appears in known data breaches.</span></div></div><div class="privacy-inline"><span>ⓘ</span><p>Only a secure hash prefix is checked. Your actual password stays in your browser.</p></div></section>
+          <section id="recommendations" class="panel tips-panel"><div class="panel-heading"><span class="panel-icon">✧</span><h2>Security Recommendations</h2></div><div id="tips" class="tips" hidden><div id="tip-list"></div></div><div id="tips-placeholder" class="tips-placeholder"><p>◉ &nbsp; Use at least 12 characters.</p><p>◉ &nbsp; Mix letters, numbers and symbols.</p><p>◉ &nbsp; Avoid common words and patterns.</p><p>◉ &nbsp; Use a unique password for each account.</p><p>◉ &nbsp; Consider using a password manager.</p></div></section>
+          <section id="about" class="panel about-panel"><div class="about-icon">▣</div><p><strong>Your password stays private.</strong><br><span>We hash it in your browser and only check a short hash prefix against breach data.</span></p></section>
+        </aside>
+      </div>
+      <footer class="footer">Breach data by <a href="https://haveibeenpwned.com/Passwords" target="_blank" rel="noreferrer">Have I Been Pwned ↗</a><span class="footer-divider"></span>For security awareness</footer>
+    </section>
+  </main>
+</body>
+</html>
